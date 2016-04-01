@@ -25,6 +25,16 @@
 									<li><a href="<?php echo base_url();?>admin/locations">Manage Offers</a> </li>
 								</ul>
 						</li>
+						<li class="menu-list" id='category'>
+							<a href="#"><i class="lnr lnr-spell-check"></i>
+								<span>Sales</span></a>
+								<ul class="sub-menu-list">
+									<li><a href="<?php echo base_url();?>admin/order">Orders</a> </li>
+									<li><a href="<?php echo base_url();?>admin/order/delivery">Invoices & Delivery</a> </li>
+									<li><a href="<?php echo base_url();?>admin/order/salesadjustment">Sales Adjustment</a> </li>
+									<!-- <li><a href="<?php echo base_url();?>admin/subscribe">Credit Memos</a> </li> -->
+								</ul>
+						</li>
 						
 
 						<li class="menu-list" id='customers'>

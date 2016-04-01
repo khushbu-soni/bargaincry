@@ -85,6 +85,28 @@ class merchant_model extends CI_Model{
          // $currency = $this->db->query("select * from category")->result_array();
         return $currency;
     }
+
+    function check_merchant($username,$password){
+
+     $query = $this->db->get_where('merchants', array(
+                    'username' =>$username,
+                    'password' =>$password,
+                    'is_deleted'=>0,
+                    'status'=>1,
+                        )
+                );
+
+        if ($query->num_rows() > 0){
+            //set necessary session variables
+            $user = $query->row();
+                
+            // $this->session->set_userdata('merchant_id', $merchant->id);
+            return $user;
+    }else{
+        return 0;
     }
+
+    }
+}
 
 
