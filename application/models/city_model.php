@@ -8,7 +8,7 @@ class city_model extends CI_Model{
     }
 
     function get(){
-         $currency = $this->db->query("select city.*,country.name as country_name, state.name as state_name from city join country on country.id=city.country_id join state on state.id=city.state_id")->result();
+         $currency = $this->db->query("select city.*,country.name as country_name, state.name as state_name from city join country on country.id=city.country_id join state on state.id=city.state_id where city.is_deleted=0")->result();
 
         return $currency;
     }
@@ -24,19 +24,10 @@ class city_model extends CI_Model{
          // $currency = $this->db->query("select * from category")->result_array();
         // return $currency;
     }
-
-    function get_name($id){
-        // $data=array('id'=>$id);
-
-         $currency = $this->db->query("select name from city where id=$id")->row_array();
-         // $currency = $this->db->query("select * from category")->result_array();
-        return $currency;
-    }
-
     function get_by_id($id){
         // $data=array('id'=>$id);
 
-         $currency = $this->db->query("select city.*,country.name as country_name,state.name as state_name from city join country on country.id=city.country_id join state on state.id=city.state_id where city.id=$id")->row_array();
+         $currency = $this->db->query("select city.*,country.name as country_name,state.name as state_name from city join country on country.id=city.country_id join state on state.id=city.state_id where city.id=$id and city.is_deleted=0")->row_array();
          // $currency = $this->db->query("select * from category")->result_array();
         return $currency;
     }
@@ -51,10 +42,21 @@ class city_model extends CI_Model{
 
      function delete($id){
        // $data = array('id'=>$id);
-         $this->db->delete('city', array('id' => $id));
-        if ($this->db->affected_rows() > 0)
-            return TRUE;
-        return FALSE;   
+        //  $this->db->delete('city', array('id' => $id));
+        // if ($this->db->affected_rows() > 0)
+        //     return TRUE;
+        // return FALSE; 
+         $condition = array(
+        'is_deleted' => 1
+
+        );
+
+         $query = $this->db->update('city',$condition,array('id' => $id));
+         //   print_r($query);
+         // exit();
+         if ($this->db->affected_rows() > 0)
+            return 1;
+        return 0;  
     }
 
     

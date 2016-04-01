@@ -24,16 +24,6 @@ class town_model extends CI_Model{
          // $currency = $this->db->query("select * from category")->result_array();
         // return $currency;
     }
-
-
-    function get_name($id){
-        // $data=array('id'=>$id);
-
-         $currency = $this->db->query("select name from town where id=$id")->row_array();
-         // $currency = $this->db->query("select * from category")->result_array();
-        return $currency;
-    }
-
     function get_by_id($id){
         // $data=array('id'=>$id);
 

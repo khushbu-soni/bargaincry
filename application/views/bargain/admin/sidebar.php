@@ -22,11 +22,20 @@
 								<ul class="sub-menu-list">
 									<li><a href="<?php echo base_url();?>admin/deal/type">Deal Types</a> </li>
 									<li><a href="<?php echo base_url();?>admin/deal">Manage Deals</a> </li>
-									<li><a href="<?php echo base_url();?>admin/settings">Manage Settings</a> </li>
-									<li><a href="<?php echo base_url();?>admin/subscribe">Manage Subscribe</a> </li>
+									<li><a href="<?php echo base_url();?>admin/locations">Manage Offers</a> </li>
 								</ul>
 						</li>
 						
+
+						<li class="menu-list" id='customers'>
+							<a href="#"><i class="lnr lnr-user"></i>
+								<span>Customers</span></a>
+								<ul class="sub-menu-list">
+									<li><a href="<?php echo base_url();?>admin/customer">Manage Customers</a> </li>
+									<li><a href="<?php echo base_url();?>admin/customer/group">Customer Groups</a> </li>
+									<li><a href="<?php echo base_url();?>admin/locations">Online Customers</a> </li>
+								</ul>
+						</li>
 						          
 						<li class="menu-list"><a href="#"><i class="lnr lnr-envelope"></i> <span>Offers</span></a>
 							<ul class="sub-menu-list">

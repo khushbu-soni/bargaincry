@@ -8,7 +8,7 @@ class country_model extends CI_Model{
     }
 
     function get(){
-         $currency = $this->db->query("select * from country")->result();
+         $currency = $this->db->query("select * from country where is_deleted=0")->result();
 
         return $currency;
     }
@@ -23,19 +23,10 @@ class country_model extends CI_Model{
          // $currency = $this->db->query("select * from category")->result_array();
         // return $currency;
     }
-
-    function get_name($id){
-        // $data=array('id'=>$id);
-
-         $currency = $this->db->query("select name from country where id=$id")->row_array();
-         // $currency = $this->db->query("select * from category")->result_array();
-        return $currency;
-    }
-
     function get_by_id($id){
         // $data=array('id'=>$id);
 
-         $currency = $this->db->query("select * from country where id=$id")->row_array();
+         $currency = $this->db->query("select * from country where id=$id and is_deleted=0")->row_array();
          // $currency = $this->db->query("select * from category")->result_array();
         return $currency;
     }
@@ -50,10 +41,22 @@ class country_model extends CI_Model{
 
      function delete($id){
        // $data = array('id'=>$id);
-         $this->db->delete('country', array('id' => $id));
-        if ($this->db->affected_rows() > 0)
-            return TRUE;
-        return FALSE;   
+        //  $this->db->delete('country', array('id' => $id));
+        // if ($this->db->affected_rows() > 0)
+        //     return TRUE;
+        // return FALSE; 
+
+         $condition = array(
+        'is_deleted' => 1
+
+        );
+
+         $query = $this->db->update('country',$condition,array('id' => $id));
+         //   print_r($query);
+         // exit();
+         if ($this->db->affected_rows() > 0)
+            return 1;
+        return 0;  
     }
 
     

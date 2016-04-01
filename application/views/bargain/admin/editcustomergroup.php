@@ -65,44 +65,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="main-content">
       <!-- header-starts -->
       <?php echo $head;?>
+      
+
     <!-- //header-ends -->
       <div id="page-wrapper">
         <div class="graphs">
-          <h3 class="blank1">Masters</h3>
+          <h3 class="blank1">Manage Customer Group</h3>
            <div class="xs tabls">
             <div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
               <div class="panel-heading">
-                <h2>Add City</h2>
+                <h2>Edit Customer Group</h2>
                 <div class="panel-ctrls" data-actions-container="" data-action-collapse="{&quot;target&quot;: &quot;.panel-body&quot;}"><span class="button-icon has-bg"><i class="ti ti-angle-down"></i></span></div>
               </div>
               <div class="panel-body no-padding  " style="display: block;">
-               <form role="form"  method="post"  enctype="multipart/form-data" action='<?php echo base_url()?>admin/city/create'>
+               <form role="form"  method="post"  enctype="multipart/form-data" action='<?php echo base_url()?>admin/customer/updatecustomergroup'>
                 <div class='col-md-6'>
-                  <div class="form-group">
-                    <span class="help-block"><p id="characterLeft" class="help-block ">Select Country</p></span>                    
-                    <select id="dealtype" name="country_id" class="form-control">
-                      <?php foreach ($countires as $junk) { ?>
-                      <option value="<?php echo $junk->id;?>"><?php echo $junk->name?></option>
-                      <?php }?>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <span class="help-block"><p id="characterLeft" class="help-block ">Select State</p></span>                    
-                    <select id="dealtype" name="state_id" class="form-control">
-                      <?php foreach ($states as $junk) { ?>
-                      <option value="<?php echo $junk->id;?>"><?php echo $junk->name?></option>
-                      <?php }?>
-                    </select>
-                  </div>
                    <div class="form-group">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
-                    <input type="hidden" class="form-control" id="is_deleted" name="is_deleted" value="0" placeholder="Name" required>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" value='<?php echo $customergroup['name'];?>' required>
+                    <input type="hidden" class="form-control" id="id" name="id" placeholder="Name" value='<?php echo $customergroup['id'];?>' required>
                     </div>
-                    
                   
+                  
+            </div>
            
                 <div class="form-group">
-                    <a href='<?php echo base_url();?>admin/city' class="btn btn-default" >Close</a>
+                    <a type="button" href='<?php echo base_url();?>admin/customer/group' class="btn btn-default" data-dismiss="modal">Close</a>
                     <button type="submit" class="btn btn-primary" data-dismiss="modal" >Save changes</button>
                   </div>
               </form>
@@ -131,9 +118,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
       <!-- Edit Modal -->
    </section>
-
+  
 <?php echo $footer;?>
 
+ <script type="text/javascript">
 
  </script>
 </script>

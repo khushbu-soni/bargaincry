@@ -1,5 +1,5 @@
 <?php
-class dealtype_model extends CI_Model{
+class customer_group_model extends CI_Model{
     //__construct
     public $data;
     //Constructor of abstract_userlogin_model
@@ -8,14 +8,14 @@ class dealtype_model extends CI_Model{
     }
 
     function get(){
-         $currency = $this->db->query("select * from dealtypes where is_deleted=0")->result();
+         $currency = $this->db->query("select * from customer_groups where is_deleted=0")->result();
 
         return $currency;
     }
 
 
     // function getActive(){
-    //      $currency = $this->db->query("select * from dealtypes where status=1")->result();
+    //      $currency = $this->db->query("select * from customer_groups where status=1")->result();
 
     //     return $currency;
     // }
@@ -24,14 +24,14 @@ class dealtype_model extends CI_Model{
     function add($data){
         // $data=array('name'=>$name,'parent_id'=>$parent_id);
 
-        $this->db->insert('dealtypes', $data); 
+        $this->db->insert('customer_groups', $data); 
          // $currency = $this->db->query("select * from category")->result_array();
         // return $currency;
     }
     function get_by_id($id){
         // $data=array('id'=>$id);
 
-         $currency = $this->db->query("select * from dealtypes where id=$id and is_deleted=0")->row_array();
+         $currency = $this->db->query("select * from customer_groups where id=$id and is_deleted=0")->row_array();
          // $currency = $this->db->query("select * from category")->result_array();
         return $currency;
     }
@@ -47,27 +47,27 @@ class dealtype_model extends CI_Model{
        // $data = array('id'=>$id);
        // $data = array('name'=>$name,'parent_id'=>$parent_id);
         $this->db->where('id',$id);
-        return $this->db->update('dealtypes', $data);
+        return $this->db->update('customer_groups', $data);
     }
 
      function delete($id){
        // $data = array('id'=>$id);
-        //  $this->db->delete('dealtypes', array('id' => $id));
+        //  $this->db->delete('customer_groups', array('id' => $id));
         // if ($this->db->affected_rows() > 0)
         //     return TRUE;
-        // return FALSE; 
+        // return FALSE;   
 
          $condition = array(
         'is_deleted' => 1
 
         );
 
-         $query = $this->db->update('dealtypes',$condition,array('id' => $id));
+         $query = $this->db->update('customer_groups',$condition,array('id' => $id));
          //   print_r($query);
          // exit();
          if ($this->db->affected_rows() > 0)
             return 1;
-        return 0;  
+        return 0;
     }
 
     function markEnable($id){

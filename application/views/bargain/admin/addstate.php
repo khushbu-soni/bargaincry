@@ -88,6 +88,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   </div>
                    <div class="form-group">
                     <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                    <input type="hidden" class="form-control" id="is_deleted" name="is_deleted" value="0" placeholder="Name" required>
                     </div>
                     
                   

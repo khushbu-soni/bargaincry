@@ -83,7 +83,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       <th>Name</th>
                       
                       <th>Edit</th>
-                      <!-- <th>Delete</th>-->
+                       <th>Delete</th>
                     </tr>
                   </thead>
 
@@ -97,7 +97,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       <td><?php echo $junk->name;?></td>
                      
                       <td><a class='btn btn-info' href='<?php  echo base_url()?>admin/deal/edittype?id=<?php echo $junk->id;?>'>Edit</button></a>
-                      <!-- <td><button class='btn btn-danger' onclick='deleteDealType(<?php echo $junk->id;?>)'>Delete</button></td> -->
+                      <td><button class='btn btn-danger' onclick='deleteDealType(<?php echo $junk->id;?>)'>Delete</button></td>
                     </tr>
                     <?php $i++;  } ?>
                      
@@ -109,7 +109,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       <th>Name</th>
                     
                       <th>Edit</th>
-                      <!-- <th>Delete</th> -->
+                      <th>Delete</th>
                     </tr>
         </tfoot>
                 </table>

@@ -15,7 +15,7 @@
                     <ul class="menu accordion-menu">
                         
                         <li><a href="<?php echo base_url()."admin/dashboard"?> class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-home"></span><p>Dashboard</p></a></li>
-                        <li><a href="<?php echo base_url()."admin/category";?>" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-user"></span><p>Category</p></a></li>
+                        <li><a href="<?php echo base_url()."admin/category";?>" class="waves-effect waves-button" onclick="javascript:_paq.push(['trackEvent', 'category', 'category']);"><span class="menu-icon glyphicon glyphicon-user"></span><p>Category</p></a></li>
                         <li><a href="<?php echo base_url()."admin/article";?>" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-user"></span><p>Article</p></a></li>
                         <li class="droplink"><a href="#" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-envelope"></span><p>Mailbox</p><span class="arrow"></span></a>
                             <ul class="sub-menu">

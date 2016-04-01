@@ -2,7 +2,7 @@
 /**
 * @author David Adamo Jr.
 */
-class Deal extends CI_Controller {
+class Customer extends CI_Controller {
 	public $data;
 
 	public function __construct()
@@ -14,8 +14,8 @@ class Deal extends CI_Controller {
 		$this->data['sidebar'] = $this->load->view('bargain/admin/sidebar', '', TRUE);
 		$this->data['head'] = $this->load->view('bargain/admin/head', '', TRUE);
 
-		$this->load->model('deal_model', 'deal');
-		$this->load->model('dealtype_model', 'dealtype');
+		$this->load->model('customer_model', 'customers');
+		$this->load->model('customer_group_model', 'customergroup');
 		$this->load->model('country_model', 'country');
 		$this->load->model('state_model', 'state');
 		$this->load->model('city_model', 'city');
@@ -25,9 +25,11 @@ class Deal extends CI_Controller {
 
 	public function index()
 	{	
-		$this->data['deals']=$this->deal->get();
+		$this->load->model('customer_group_model', 'customergroup');
+		$this->data['customer']=$this->customers->get_customer_details();
+		// $this->data['customergroup']=$this->customergroup->get();
 		// echo $this->db->last_queery();
-		$this->load->view('bargain/admin/deal', $this->data);
+		$this->load->view('bargain/admin/customer_manage', $this->data);
 	}
 
 	public function couponoption()
@@ -69,10 +71,10 @@ class Deal extends CI_Controller {
 
 	}	
 
-	public function type()
+	public function group()
 	{	
-		$this->data['dealtype']=$this->dealtype->get();
-		$this->load->view('bargain/admin/dealtype', $this->data);
+		$this->data['customergroup']=$this->customergroup->get();
+		$this->load->view('bargain/admin/customer_group_details', $this->data);
 	}
 
 	public function images(){
@@ -83,18 +85,18 @@ class Deal extends CI_Controller {
 		}
 	}
 
-	public function edittype(){
+	public function editgroup(){
 		if(isset($_GET)){
 			$id=$_GET['id'];
 
-			$this->data['dealtype']=$this->dealtype->get_by_id($id);
+			$this->data['customergroup']=$this->customergroup->get_by_id($id);
 		}
-		$this->load->view('bargain/admin/edittype', $this->data);
+		$this->load->view('bargain/admin/editcustomergroup', $this->data);
 
 
 	}
 
-	public function editdeal(){
+	public function edit_customer(){
 		if(isset($_GET)){
 			$id=$_GET['id'];
 			$this->data['merchants']=$this->merchant->getActive();
@@ -102,10 +104,10 @@ class Deal extends CI_Controller {
 			$this->data['state']=$this->state->get();
 			$this->data['city']=$this->city->get();
 			$this->data['town']=$this->town->get();
-			$this->data['dealtype']=$this->dealtype->get();
-			$this->data['deal']=$this->deal->get_by_id($id);
+			$this->data['customergroup']=$this->customergroup->get();
+			$this->data['customer']=$this->customers->get_by_id($id);
 		}
-		$this->load->view('bargain/admin/editdeal', $this->data);
+		$this->load->view('bargain/admin/editcustomer', $this->data);
 
 
 	}	
@@ -120,9 +122,9 @@ class Deal extends CI_Controller {
 
 	}
 
-	public function addtype(){
+	public function addgroup(){
 		
-		$this->load->view('bargain/admin/adddealtype', $this->data);
+		$this->load->view('bargain/admin/addcustomer_group', $this->data);
 
 	}	
 
@@ -207,14 +209,14 @@ class Deal extends CI_Controller {
 				// return true;
 	}
 
-	 function createtype(){
+	 function creategroup(){
 	 	if($_POST){
- 		$this->dealtype->add($_POST);
+ 		$this->customergroup->add($_POST);
 	 	}
-	 	redirect('admin/deal/type');
+	 	redirect('admin/customer/group');
 	 }
 
-	public function updatedealtype(){
+	public function updatecustomergroup(){
 		print_r($_POST);
 		
 		if($_POST){
@@ -224,10 +226,10 @@ class Deal extends CI_Controller {
 
 		$id=$_POST['id'];
 
- 		$this->dealtype->edit($data,$id);
+ 		$this->customergroup->edit($data,$id);
 	 	// $this->upload_image();
 	 	}
-	 	redirect('admin/deal/type');
+	 	redirect('admin/customer/group');
 
 		// $this->load->view('bargain/admin/editmerchant', $this->data);
 
@@ -241,28 +243,25 @@ class Deal extends CI_Controller {
 		if($_POST){
 		$data=array();
 		$data['name']=$_POST['name'];
-		$data['merchant_id']=$_POST['merchant_id'];
-		$data['country_id']=$_POST['country_id'];
-		$data['state_id']=$_POST['state_id'];
-		$data['city_id']=$_POST['city_id'];
-		$data['town_id']=$_POST['town_id'];
-		$data['valid_from']=$_POST['valid_from'];
-		$data['valid_to']=$_POST['valid_to'];
-		$data['url_key']=$_POST['url_key'];
-		$data['visibilty']=$_POST['visibilty'];
-		$data['dealtype_id']=$_POST['dealtype_id'];
-		$data['highlights']=$_POST['highlights'];
-		$data['policies']=$_POST['policies'];
-		$data['SKU']=$_POST['SKU'];
-		$data['about']=$_POST['about'];
+		$data['group_id']=$_POST['group_id'];
+		$data['email']=$_POST['email'];
+		$data['password']=$_POST['password'];
+		$data['phone_no']=$_POST['phone_no'];
+		$data['country']=$_POST['country'];
+		$data['state']=$_POST['state'];
+		$data['home_town']=$_POST['home_town'];
+		$data['registration_date']=$_POST['registration_date'];
+		$data['permanent_address']=$_POST['permanent_address'];
+		$data['shipping_address']=$_POST['shipping_address'];
+		$data['group_id']=$_POST['customergroup_id'];
 		
 
 		$id=$_POST['id'];
 
- 		$this->deal->edit($data,$id);
+ 		$this->customers->edit($data,$id);
 	 	// $this->upload_image();
 	 	}
-	 	redirect('admin/deal');
+	 	redirect('admin/customer');
 
 		// $this->load->view('bargain/admin/editmerchant', $this->data);
 	}
@@ -319,16 +318,16 @@ class Deal extends CI_Controller {
 		
 	}
 
-	function deleteDeal(){
+	function deleteCustomer(){
 		$id=$_GET['id'];
-		$this->deal->delete($id);
+		$this->customers->delete($id);
 
 		
 	}
 
-	function deleteDealType(){
+	function deleteCustomerGroup(){
 		$id=$_GET['id'];
-		$this->dealtype->delete($id);
+		$this->customergroup->delete($id);
 
 		
 	}

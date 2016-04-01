@@ -8,7 +8,7 @@ class merchant_model extends CI_Model{
     }
 
     function get(){
-         $currency = $this->db->query("select * from merchants")->result();
+         $currency = $this->db->query("select * from merchants where is_deleted=0")->result();
 
         return $currency;
     }
@@ -19,16 +19,8 @@ class merchant_model extends CI_Model{
         return $currency;
     }
 
-    function get_name($id){
-        // $data=array('id'=>$id);
-
-         $currency = $this->db->query("select name from merchants where id=$id")->row_array();
-         // $currency = $this->db->query("select * from category")->result_array();
-        return $currency;
-    }
-
     function get_sub(){
-         $currency = $this->db->query("select c.id,c.name as sub_category,sub_c.name as parent_category from category c  join category sub_c on c.parent_id=sub_c.id")->result();
+         $currency = $this->db->query("select c.id,c.name as sub_category,sub_c.name as parent_category from category c  join category sub_c on c.parent_id=sub_c.id where c.is_deleted=0")->result();
 
         return $currency;
     }
@@ -64,10 +56,23 @@ class merchant_model extends CI_Model{
 
      function delete($id){
        // $data = array('id'=>$id);
-         $this->db->delete('merchants', array('id' => $id));
-        if ($this->db->affected_rows() > 0)
-            return TRUE;
-        return FALSE;   
+        //  $this->db->delete('merchants', array('id' => $id));
+        // if ($this->db->affected_rows() > 0)
+        //     return TRUE;
+        // return FALSE;   
+
+                
+         $condition = array(
+        'is_deleted' => 1
+
+        );
+
+         $query = $this->db->update('merchants',$condition,array('id' => $id));
+         //   print_r($query);
+         // exit();
+         if ($this->db->affected_rows() > 0)
+            return 1;
+        return 0;        
     }
 
     function markEnable($id){

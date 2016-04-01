@@ -44,11 +44,23 @@ class article_model extends CI_Model{
     }
 
      function delete($id){
-       // $data = array('id'=>$id);
-         $this->db->delete('articles', array('id' => $id));
-        if ($this->db->affected_rows() > 0)
-            return TRUE;
-        return FALSE;   
+       // // $data = array('id'=>$id);
+       //   $this->db->delete('articles', array('id' => $id));
+       //  if ($this->db->affected_rows() > 0)
+       //      return TRUE;
+       //  return FALSE;   
+
+        $condition = array(
+        'is_deleted' => 1
+
+        );
+
+         $query = $this->db->update('articles',$condition,array('id' => $id));
+         //   print_r($query);
+         // exit();
+         if ($this->db->affected_rows() > 0)
+            return 1;
+        return 0;
     }
 
         function like($article_id,$user_id,$id){

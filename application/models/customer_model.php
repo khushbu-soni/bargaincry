@@ -1,5 +1,5 @@
 <?php
-class deal_model extends CI_Model{
+class customer_model extends CI_Model{
     //__construct
     public $data;
     //Constructor of abstract_userlogin_model
@@ -7,16 +7,24 @@ class deal_model extends CI_Model{
        // $this->load->database();
     }
 
+
+        function get_customer_details(){
+         $customer = $this->db->query("select * from customer where is_deleted=0")->result();
+
+
+        return $customer;
+    }
+
     function get(){
          $currency = $this->db->query("select deals.*,state.name as state_name,city.name as city_name,town.name as town_name, dealtypes.name as dealtype,merchants.name as merchant_name, country.name as country_name from deals join merchants on merchants.id = deals.merchant_id join country on country.id =deals.country_id join dealtypes on dealtypes.id=deals.dealtype_id 
-            join  state on state.id = deals.state_id join city on city.id=deals.city_id join town on town.id=deals.town_id where deals.is_deleted=0")->result();
+            join  state on state.id = deals.state_id join city on city.id=deals.city_id join town on town.id=deals.town_id")->result();
 
 
         return $currency;
     }
 
      function get_images_by_deal($deal_id){
-         $currency = $this->db->query("select * from images where deal_id=$deal_id and is_deleted=0")->result();
+         $currency = $this->db->query("select * from images where deal_id=$deal_id")->result();
 
 
         return $currency;
@@ -46,7 +54,7 @@ function getImageName($id){
     function get_by_id($id){
         // $data=array('id'=>$id);
 
-         $currency = $this->db->query("select * from deals where id=$id and is_deleted=0")->row_array();
+         $currency = $this->db->query("select * from customer where id=$id")->row_array();
          // $currency = $this->db->query("select * from category")->result_array();
         return $currency;
     }
@@ -62,27 +70,26 @@ function getImageName($id){
        // $data = array('id'=>$id);
        // $data = array('name'=>$name,'parent_id'=>$parent_id);
         $this->db->where('id',$id);
-        return $this->db->update('deals', $data);
+        return $this->db->update('customer', $data);
     }
 
      function delete($id){
        // $data = array('id'=>$id);
-        //  $this->db->delete('deals', array('id' => $id));
+        //  $this->db->delete('customer', array('id' => $id));
         // if ($this->db->affected_rows() > 0)
         //     return TRUE;
         // return FALSE; 
-
          $condition = array(
         'is_deleted' => 1
 
         );
 
-         $query = $this->db->update('deals',$condition,array('id' => $id));
+         $query = $this->db->update('customer',$condition,array('id' => $id));
          //   print_r($query);
          // exit();
          if ($this->db->affected_rows() > 0)
             return 1;
-        return 0;  
+        return 0;    
     }
 
     function deleteImage($id){

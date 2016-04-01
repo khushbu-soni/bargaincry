@@ -90,22 +90,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                       <?php }?>
                     </select>
                   </div>
-                  <div class="form-group">
-                    <span class="help-block"><p id="characterLeft" class="help-block ">Select Category</p></span>                    
-                    <select id="category_id" name="category_id" class="form-control">
-                      <?php foreach ($category as $junk) { ?>
-                      <option value="<?php echo $junk->id;?>"><?php echo $junk->name?></option>
-                      <?php }?>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <span class="help-block"><p id="characterLeft" class="help-block ">Select Sub Category</p></span>                    
-                    <select id="subcategory_id" name="subcategory_id" class="form-control">
-                      <?php foreach ($subcategory as $junk) { ?>
-                      <option value="<?php echo $junk->id;?>"><?php echo $junk->sub_category?></option>
-                      <?php }?>
-                    </select>
-                  </div>
                     <div class="form-group">
                     <span class="help-block"><p id="characterLeft" class="help-block ">Select Merchant</p></span>                    
                     <select id="merchant" name="merchant_id" class="form-control">
@@ -155,7 +139,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                  <div class="form-group">
                     <input type="text" id="datepicker" class="form-control"  name="valid_from" placeholder="Valid From" value='' required>
                         <span class="help-block"><p id="characterLeft" class="help-block ">Deal Valid From</p></span>
-                        <input type='hidden' name='created_at' value='<?php echo date('Y-m-d');?>'/>                    
+                        <input type='hidden' name='created_at' value='<?php echo date('Y-m-d');?>'/>      
+                        <input type="hidden" class="form-control" id="is_deleted" name="is_deleted" value="0" placeholder="is_deleted" required>              
                   </div>
                     <div class="form-group">
                     <input type="text" id="to_datepicker" class="form-control"  name="valid_to" placeholder="Valid To" value='' required>

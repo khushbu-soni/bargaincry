@@ -26,6 +26,28 @@
   <link rel="apple-touch-icon" href="#">
   <link rel="apple-touch-icon" sizes="72x72" href="#">
   <link rel="apple-touch-icon" sizes="114x114" href="#">
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setCookieDomain", "*.localhost"]);
+  _paq.push(["setDomains", ["*.localhost/bargain"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//localhost/piwiky/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//localhost/piwiky/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+
+
+
+
   </head>
   
   <body>
@@ -509,6 +531,8 @@
           <!--/.row -->
         </div>
         <!--/.frame -->
+  
+
         <div class="row">
           <div class="col-sm-12">
             <div class="row">
@@ -530,9 +554,12 @@
                     -81%
                   </div>
                   <div class="image">
-                    <a href="#" target="_blank" title="#">
-                      <img src="images/affiliate-12.jpg" alt="#" class="img-responsive">
-                    </a>
+                  <a href="http://localhost/bargain" data-track-content>
+                  <img src="images/affiliate-12.jpg" data-content-piece="img.jpg"/>
+              </a>
+                    <!-- <a href="#" ta  rget="_blank" title="#" data-track-content>
+                      <img src="images/affiliate-12.jpg" alt="#" class="img-responsive" data-track-content data-content-name="My Product Name" data-content-piece="Buy now">
+                    </a> -->
                     <span class="bought">
                       <i class="ti-tag">
                       </i>

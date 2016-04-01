@@ -57,7 +57,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
       <!--logo and iconic logo end-->
       <?php echo $sidebar;?>
-    
     </div>
     <!-- left side end-->
     
@@ -68,51 +67,51 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //header-ends -->
       <div id="page-wrapper">
         <div class="graphs">
-          <h3 class="blank1">Masters</h3>
+          <h3 class="blank1">Manage Customer Groups</h3>
            <div class="xs tabls">
             <div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
               <div class="panel-heading">
-                <h2>Add City</h2>
+                <h2>Deal Type</h2>
                 <div class="panel-ctrls" data-actions-container="" data-action-collapse="{&quot;target&quot;: &quot;.panel-body&quot;}"><span class="button-icon has-bg"><i class="ti ti-angle-down"></i></span></div>
               </div>
-              <div class="panel-body no-padding  " style="display: block;">
-               <form role="form"  method="post"  enctype="multipart/form-data" action='<?php echo base_url()?>admin/city/create'>
-                <div class='col-md-6'>
-                  <div class="form-group">
-                    <span class="help-block"><p id="characterLeft" class="help-block ">Select Country</p></span>                    
-                    <select id="dealtype" name="country_id" class="form-control">
-                      <?php foreach ($countires as $junk) { ?>
-                      <option value="<?php echo $junk->id;?>"><?php echo $junk->name?></option>
-                      <?php }?>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <span class="help-block"><p id="characterLeft" class="help-block ">Select State</p></span>                    
-                    <select id="dealtype" name="state_id" class="form-control">
-                      <?php foreach ($states as $junk) { ?>
-                      <option value="<?php echo $junk->id;?>"><?php echo $junk->name?></option>
-                      <?php }?>
-                    </select>
-                  </div>
-                   <div class="form-group">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
-                    <input type="hidden" class="form-control" id="is_deleted" name="is_deleted" value="0" placeholder="Name" required>
-                    </div>
-                    
-                  
-           
-                <div class="form-group">
-                    <a href='<?php echo base_url();?>admin/city' class="btn btn-default" >Close</a>
-                    <button type="submit" class="btn btn-primary" data-dismiss="modal" >Save changes</button>
-                  </div>
-              </form>
-    </div>
+              <div class="panel-body no-padding" style="display: block;">
+                 <a type="submit" class="btn btn-sm btn-warning warning_33 pull-right" href="<?php echo base_url();?>admin/customer/addgroup" >Add</a>
+               <table  class="table table-striped" id='example' class="display" cellspacing="0" width="100%">
+                  <thead>
+                    <tr class="warning">
+                      <th>#</th>
+                      <th>Name</th>
+                      
+                      <th>Edit</th>
+                       <th>Delete</th>
+                    </tr>
+                  </thead>
 
-<!-- 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" data-dismiss="modal" >Save changes</button>
-      </div> -->
+                  <tbody >
+                    <?php
+                     $i=1;
+                     foreach ($customergroup as $junk) {?>
+                      
+                    <tr>
+                      <td><?php echo $i;?></td>
+                      <td><?php echo $junk->name;?></td>
+                     
+                      <td><a class='btn btn-info' href='<?php  echo base_url()?>admin/customer/editgroup?id=<?php echo $junk->id;?>'>Edit</button></a></td>
+                      <td><button class='btn btn-danger' onclick='deleteCustomerGroup(<?php echo $junk->id;?>)'>Delete</button></td>
+                    </tr>
+                    <?php $i++;  } ?>
+                     
+                                      
+                  </tbody>
+                  <tfoot>
+            <tr class="warning">
+                      <th>#</th>
+                      <th>Name</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
+                    </tr>
+        </tfoot>
+                </table>
               </div>
             </div>
            </div>
@@ -125,16 +124,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!--footer section end-->
 
       <!-- main content end-->
-      <!-- Edit Modal -->
-
-      <!-- Modal -->
 
       <!-- Edit Modal -->
    </section>
-
+ </body>
+  
 <?php echo $footer;?>
 
+ <script type="text/javascript">
 
+function deleteCustomerGroup(id){
+      if(confirm('Are you Sure..?')){
+        $.ajax({
+          type:'GET',
+          url: "<?php echo base_url()?>admin/customer/deleteCustomerGroup",
+          data:{id:id},
+          success: function(result){
+          window.location.href='';
+      }});
+        
+      }
+    }
+
+    
  </script>
 </script>
 </body>
