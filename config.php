@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://'.$_SERVER['HTTP_HOST'].'/bargaincry_admin/';
+$config['base_url']	= 'http://'.$_SERVER['HTTP_HOST'].'/';
 // $config['site_url']	= 'localhost/bargaincry/';
 //$config['base_url']	= 'http://www.davidadamojr.com/restro/';
 
@@ -23,7 +23,7 @@ $config['base_url']	= 'http://'.$_SERVER['HTTP_HOST'].'/bargaincry_admin/';
 | Path to dish images
 |--------------------------------------------------------------------------
 */
-$config['img_path'] = 'http://localhost/bargaincry_admin/assets/images';
+$config['img_path'] = 'http://localhost/assets/images';
 $config['img_upload'] = './assets/images';
 
 
@@ -58,7 +58,7 @@ $config['index_page'] = '';
 | 'ORIG_PATH_INFO'	Uses the ORIG_PATH_INFO
 |
 */
-$config['uri_protocol']	= 'REQUEST_URI';
+$config['uri_protocol']	= 'AUTO';
 
 /*
 |--------------------------------------------------------------------------
