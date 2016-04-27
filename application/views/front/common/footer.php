@@ -1,10 +1,10 @@
 <footer id="footer">
         <div class="container">
           <div class="col-sm-4">
-            <img src="images/dummy_logo1.png" alt="#" class="img-responsive logo">
+            <img src="<?php echo base_url(); ?>assets/front/images/dummy_logo1.png" alt="#" class="img-responsive logo">
             <h4>We Are Also On Google Play & IOS</h4>
-            <img src="images/iphone.png" class="img-responsive col-md-4 col-xs-6">
-            <img src="images/android.png" class="img-responsive col-md-4 col-xs-6">
+            <img src="<?php echo base_url(); ?>assets/front/images/iphone.png" class="img-responsive col-md-4 col-xs-6">
+            <img src="<?php echo base_url(); ?>assets/front/images/android.png" class="img-responsive col-md-4 col-xs-6">
           </div>
           <div class="col-sm-4">
             <h5>
@@ -123,32 +123,32 @@
               <ul class="pay-opt pull-right list-inline list-unstyled">
                 <li>
                   <a href="#" title="#">
-                    <img src="images/amz-icon.png" class="img-responsive" alt="">
+                    <img src="<?php echo base_url(); ?>assets/front/images/amz-icon.png" class="img-responsive" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#" title="#">
-                    <img src="images/paypal-icon.png" class="img-responsive" alt="">
+                    <img src="<?php echo base_url(); ?>assets/front/images/paypal-icon.png" class="img-responsive" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#" title="#">
-                    <img src="images/ax-icon.png" class="img-responsive" alt="">
+                    <img src="<?php echo base_url(); ?>assets/front/images/ax-icon.png" class="img-responsive" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#" title="#">
-                    <img src="images/mb-icon.png" class="img-responsive" alt="">
+                    <img src="<?php echo base_url(); ?>assets/front/images/mb-icon.png" class="img-responsive" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#" title="#">
-                    <img src="images/mst-icon.png" class="img-responsive" alt="">
+                    <img src="<?php echo base_url(); ?>assets/front/images/mst-icon.png" class="img-responsive" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#" title="#">
-                    <img src="images/mstr-icon.png" class="img-responsive" alt="">
+                    <img src="<?php echo base_url(); ?>assets/front/images/mstr-icon.png" class="img-responsive" alt="">
                   </a>
                 </li>
               </ul>

@@ -14,6 +14,7 @@
 									<li><a href="<?php echo base_url();?>admin/city">City</a> </li>
 									<li><a href="<?php echo base_url();?>admin/town">Town</a> </li>
 									<li><a href="<?php echo base_url();?>admin/merchant">Marchants</a> </li>
+									<li><a href="<?php echo base_url();?>admin/locations">Trash</a> </li>
 								</ul>
 						</li>
 						<li class="menu-list" id='category'>
@@ -23,6 +24,7 @@
 									<li><a href="<?php echo base_url();?>admin/deal/type">Deal Types</a> </li>
 									<li><a href="<?php echo base_url();?>admin/deal">Manage Deals</a> </li>
 									<li><a href="<?php echo base_url();?>admin/locations">Manage Offers</a> </li>
+									<li><a href="<?php echo base_url();?>admin/locations">Trash</a> </li>
 								</ul>
 						</li>
 						<li class="menu-list" id='category'>
@@ -32,7 +34,8 @@
 									<li><a href="<?php echo base_url();?>admin/order">Orders</a> </li>
 									<li><a href="<?php echo base_url();?>admin/order/delivery">Invoices & Delivery</a> </li>
 									<li><a href="<?php echo base_url();?>admin/order/salesadjustment">Sales Adjustment</a> </li>
-									<!-- <li><a href="<?php echo base_url();?>admin/subscribe">Credit Memos</a> </li> -->
+									<li><a href="<?php echo base_url();?>admin/locations">Trash</a> </li>
+									<!-- <li><a href="<?php //echo base_url();?>admin/subscribe">Credit Memos</a> </li> -->
 								</ul>
 						</li>
 						
@@ -44,12 +47,13 @@
 									<li><a href="<?php echo base_url();?>admin/customer">Manage Customers</a> </li>
 									<li><a href="<?php echo base_url();?>admin/customer/group">Customer Groups</a> </li>
 									<li><a href="<?php echo base_url();?>admin/locations">Online Customers</a> </li>
+									<li><a href="<?php echo base_url();?>admin/locations">Trash</a> </li>
 								</ul>
 						</li>
 						          
-						<li class="menu-list"><a href="#"><i class="lnr lnr-envelope"></i> <span>Offers</span></a>
+						<li class="menu-list"><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a>
 							<ul class="sub-menu-list">
-								<li><a href="inbox.html">Inbox</a> </li>
+								<li><a href="<?php echo base_url();?>admin/settings">Setting</a> </li>
 								<li><a href="compose-mail.html">Compose Mail</a></li>
 							</ul>
 						</li>      

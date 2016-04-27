@@ -31,6 +31,12 @@ class country_model extends CI_Model{
         return $currency;
     }
 
+    function get_by_sortname($sname)
+    {
+        $currency = $this->db->query("select * from country where sortname='$sname' and is_deleted=0")->row_array();
+        return $currency;
+    }
+
   
      function edit($data,$id){
        // $data = array('id'=>$id);

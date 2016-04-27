@@ -8,7 +8,7 @@ class city_model extends CI_Model{
     }
 
     function get(){
-         $currency = $this->db->query("select city.*,country.name as country_name, state.name as state_name from city join country on country.id=city.country_id join state on state.id=city.state_id where city.is_deleted=0")->result();
+         $currency = $this->db->query("select city.*,country.name as country_name, state.name as state_name from city join state on state.id=city.state_id join country on country.id=state.country_id  where city.is_deleted=0")->result();
 
         return $currency;
     }

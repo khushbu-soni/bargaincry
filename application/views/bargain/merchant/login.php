@@ -13,12 +13,12 @@
 	  <div id="login-page">
 	  	<div class="container">
 	  	
-		      <form class="form-login" action="#" id='merchant_login'>
+		      <form class="form-login" action="<?php echo base_url(); ?>merchant/merchant/login" method="POST" id='merchant_login'>
 		        <h2 class="form-login-heading">sign in now</h2>
 		        <div class="login-wrap">
-		            <input type="text" class="form-control" placeholder="User ID" id='username' autofocus>
+		            <input type="text" class="form-control" placeholder="User ID" name="username" id='username' autofocus>
 		            <br>
-		            <input type="password" class="form-control" id='password' placeholder="Password">
+		            <input type="password" class="form-control" id='password' name="password" placeholder="Password">
 		            <label class="checkbox">
 		                <span class="pull-right">
 		                    <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>

@@ -9,7 +9,7 @@
     </script>
     <script type="text/javascript">
 
-    	function signIn(){
+    	/*function signIn(){
     		var username=$('#username').val();
     		var password=$('#password').val();
 
@@ -24,6 +24,6 @@
 			  $( this ).addClass( "done" );
 			});
 
-    	}
+    	}*/
 
     </script>

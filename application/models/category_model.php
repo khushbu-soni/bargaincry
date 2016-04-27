@@ -19,6 +19,12 @@ class category_model extends CI_Model{
         return $currency;
     }
 
+    function get_main_category(){
+         $currency = $this->db->query("select id, name from category where parent_id=0 and is_deleted=0")->result();
+
+        return $currency;
+    }
+
     function add($name,$parent_id=0){
         $data=array('name'=>$name,'parent_id'=>$parent_id,'is_deleted'=>0);
 

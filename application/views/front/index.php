@@ -30,40 +30,13 @@
   <link rel="apple-touch-icon" href="#">
   <link rel="apple-touch-icon" sizes="72x72" href="#">
   <link rel="apple-touch-icon" sizes="114x114" href="#">
-  <script type="text/javascript" src='<?php echo base_url();?>assets/piwik.js'></script>
-    <!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDomains", ["*.localhost/bargain"]]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  _paq.push(['trackAllContentImpressions']);
-  (function() {
-    var u="//localhost/piwik/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 1]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//localhost/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
-
-
   </head>
   <body>
     <div class="site-wrapper animsition" data-animsition-in="fade-in" data-animsition-out="fade-out">
       <?php echo $header ;?>
       <!-- /.search form -->
-      <div class="slider" data-track-content>
+      <div class="slider">
         <div class="container">
-  
-
-                <!-- Piwik -->
-          
-          <noscript><p><img src="//localhost/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-          <!-- End Piwik Code -->
-
           <div class="row">
             <div id="grid-slider" class="flexslider">
               <ul class="slides">
@@ -688,18 +661,10 @@
             <div class="row">
               <div class="col-sm-3">
                 <div class="deal-entry  green">
-                 <!-- data-track-content data-content-name="My Product Name" data-content-piece="Buy now" -->
+                 
                   <div class="image">
-                    
-                    <!-- <a href="http://localhost/someurl" data-track-content> -->
- <img src="<?php echo base_url();?>assets/images/affiliate-12.jpg" class="img-responsive" alt="SOME ALT TEXT" border="0" data-content-piece="anunymoous "/></a>
-
-
-                    <a href="<?php echo base_url()."admin/article";?>" target="_blank" title="#">
-                   <!--  <a href="<?php// echo base_url().'admin/dashboard';?>" data-track-content>
-                        <img src="<?php //echo base_url();?>assets/images/affiliate-12.jpg" data-content-piece/>
-                    </a> -->
-                      <!-- <img src="<?php //echo base_url();?>assets/images/affiliate-12.jpg" alt="#" class="img-responsive"  > -->
+                    <a href="#" target="_blank" title="#">
+                      <img src="<?php echo base_url();?>assets/images/affiliate-12.jpg" alt="#" class="img-responsive">
                     </a>
                     <span class="bought">
                       <i class="ti-tag">
@@ -756,7 +721,7 @@
                 <div class="deal-entry green">
                  
                   <div class="image">
-                    <a href="http://localhost/bargain/?pk_campaign=bargaincry&pk_kwd=25" target="_blank" title="#">
+                    <a href="#" target="_blank" title="#">
                       <img src="<?php echo base_url();?>assets/images/affiliate-13.jpg" alt="#" class="img-responsive">
                     </a>
                     <span class="bought">

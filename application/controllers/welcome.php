@@ -21,23 +21,25 @@ class Welcome extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		 $this->load->library('session');  //Load the Session 
+		$this->load->library('session');  //Load the Session 
 		$this->data['header_includes']=$this->load->view('front/common/header_includes');	
 		// $this->data['location']=$this->load->view('front/common/location');	
 		$this->data['header']=$this->load->view('front/common/header');	
 		// $this->data['location']=$this->load->view('front/common/location');	
 		// $this->data['head']=$this->load->view('common/head');	
 		// $this->data['footer']=$this->load->view('front/common/footer');	
+		$this->load->model('deal_model', 'deal');
 	}
 
 
 	public function index()
 	{
 				
+		$this->data['query'] = $this->deal->get_deal();
 		
-
-
-		$this->load->view('front/index',$this->data);
+		/*print_r($this->data['query']);
+		exit();*/
+		$this->load->view('front/home',$this->data);
 		
 	}
 

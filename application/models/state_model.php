@@ -31,6 +31,14 @@ class state_model extends CI_Model{
         return $currency;
     }
 
+    function get_by_countryid($cid){
+        // $data=array('id'=>$id);
+
+         $currency = $this->db->query("select state.*,country.name as country_name from state join country on country.id=state.country_id where state.country_id=$cid and state.is_deleted=0")->result();
+         // $currency = $this->db->query("select * from category")->result_array();
+        return $currency;
+    }
+
   
      function edit($data,$id){
        // $data = array('id'=>$id);

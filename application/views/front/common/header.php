@@ -4,7 +4,7 @@
             <div class="row">
               <div class="col-sm-4 col-md-2  col-xs-5 list-inline list-unstyled no-margin">
                 <p class="no-margin">
-                 <a href="index.php"><img src="<?php echo base_url();?>assets/images/dummy_logo.png" class="img-responsive">
+                 <a href="<?php echo base_url() ?>"><img src="<?php echo base_url();?>assets/images/dummy_logo.png" class="img-responsive">
                           </p></a>
                       </div>
                       
@@ -108,7 +108,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img class="dropdown-menu-category-section-theme-img" src="img/test_cat/2-i.png" alt="Image Alternative text" title="Image Title" style="right: -10px;" />
+                                            <img class="dropdown-menu-category-section-theme-img" src="<?php echo base_url(); ?>assets/front/img/test_cat/2-i.png" alt="Image Alternative text" title="Image Title" style="right: -10px;" />
                                         </div>
                                     </div>
                                 </li>
@@ -168,7 +168,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img class="dropdown-menu-category-section-theme-img" src="img/test_cat/3-i.png" alt="Image Alternative text" title="Image Title" style="right: -10px; bottom: -10px;" />
+                                            <img class="dropdown-menu-category-section-theme-img" src="<?php echo base_url(); ?>assets/front/img/test_cat/3-i.png" alt="Image Alternative text" title="Image Title" style="right: -10px; bottom: -10px;" />
                                         </div>
                                     </div>
                                 </li>
@@ -225,7 +225,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img class="dropdown-menu-category-section-theme-img" src="img/test_cat/4-i.png" alt="Image Alternative text" title="Image Title" />
+                                            <img class="dropdown-menu-category-section-theme-img" src="<?php echo base_url(); ?>assets/front/img/test_cat/4-i.png" alt="Image Alternative text" title="Image Title" />
                                         </div>
                                     </div>
                                 </li>
@@ -285,7 +285,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img class="dropdown-menu-category-section-theme-img" src="img/test_cat/5-i.png" alt="Image Alternative text" title="Image Title" />
+                                            <img class="dropdown-menu-category-section-theme-img" src="<?php echo base_url(); ?>assets/front/img/test_cat/5-i.png" alt="Image Alternative text" title="Image Title" />
                                         </div>
                                     </div>
                                 </li>
@@ -322,7 +322,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img class="dropdown-menu-category-section-theme-img" src="img/test_cat/6-i.png" alt="Image Alternative text" title="Image Title" style="right: -20px;" />
+                                            <img class="dropdown-menu-category-section-theme-img" src="<?php echo base_url(); ?>assets/front/img/test_cat/6-i.png" alt="Image Alternative text" title="Image Title" style="right: -20px;" />
                                         </div>
                                     </div>
                                 </li>
@@ -365,7 +365,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img class="dropdown-menu-category-section-theme-img" src="img/test_cat/7-i.png" alt="Image Alternative text" title="Image Title" style="right: -39px;" />
+                                            <img class="dropdown-menu-category-section-theme-img" src="<?php echo base_url(); ?>assets/front/img/test_cat/7-i.png" alt="Image Alternative text" title="Image Title" style="right: -39px;" />
                                         </div>
                                     </div>
                                 </li>
@@ -406,7 +406,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img class="dropdown-menu-category-section-theme-img" src="img/test_cat/9-i.png" alt="Image Alternative text" title="Image Title" style="right: -27px;" />
+                                            <img class="dropdown-menu-category-section-theme-img" src="<?php echo base_url(); ?>assets/front/img/test_cat/9-i.png" alt="Image Alternative text" title="Image Title" style="right: -27px;" />
                                         </div>
                                     </div>
                                 </li>
@@ -463,7 +463,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img class="dropdown-menu-category-section-theme-img" src="img/test_cat/11-i.png" alt="Image Alternative text" title="Image Title" style="right: -100px;" />
+                                            <img class="dropdown-menu-category-section-theme-img" src="<?php echo base_url(); ?>assets/front/img/test_cat/11-i.png" alt="Image Alternative text" title="Image Title" style="right: -100px;" />
                                         </div>
                                     </div>
                                 </li>
@@ -517,7 +517,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img class="dropdown-menu-category-section-theme-img" src="img/test_cat/12-i.png" alt="Image Alternative text" title="Image Title" />
+                                            <img class="dropdown-menu-category-section-theme-img" src="<?php echo base_url(); ?>assets/front/img/test_cat/12-i.png" alt="Image Alternative text" title="Image Title" />
                                         </div>
                                     </div>
                                 </li>
@@ -569,7 +569,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img class="dropdown-menu-category-section-theme-img" src="img/test_cat/13-i.png" alt="Image Alternative text" title="Image Title" style="right: -15px; bottom: -15px;" />
+                                            <img class="dropdown-menu-category-section-theme-img" src="<?php echo base_url(); ?>assets/front/img/test_cat/13-i.png" alt="Image Alternative text" title="Image Title" style="right: -15px; bottom: -15px;" />
                                         </div>
                                     </div>
                                 </li>
@@ -626,7 +626,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img class="dropdown-menu-category-section-theme-img" src="img/test_cat/14-i.png" alt="Image Alternative text" title="Image Title" style="right: -15px;" />
+                                            <img class="dropdown-menu-category-section-theme-img" src="<?php echo base_url(); ?>assets/front/img/test_cat/14-i.png" alt="Image Alternative text" title="Image Title" style="right: -15px;" />
                                         </div>
                                     </div>
                                 </li>
@@ -666,7 +666,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img class="dropdown-menu-category-section-theme-img" src="img/test_cat/15-i.png" alt="Image Alternative text" title="Image Title" style="height: 100%;" />
+                                            <img class="dropdown-menu-category-section-theme-img" src="<?php echo base_url(); ?>assets/front/img/test_cat/15-i.png" alt="Image Alternative text" title="Image Title" style="height: 100%;" />
                                         </div>
                                     </div>
                                 </li>
@@ -698,22 +698,22 @@ btn-raised ripple-effect btn-success btn-block pull-left" >
                 <div class="cart_item">
                 <ul>
                 <li>
-                <img src="images/affiliate-1.jpg" class="img-responsive">
+                <img src="<?php echo base_url(); ?>assets/front/images/affiliate-1.jpg" class="img-responsive">
                 <p>$ 41</p>
                 <p>Description of poduct</p>
                 </li>
                 <li>
-                <img src="images/affiliate-1.jpg" class="img-responsive">
+                <img src="<?php echo base_url(); ?>assets/front/images/affiliate-1.jpg" class="img-responsive">
                 <p>$ 41</p>
                 <p>Description of poduct</p>
                 </li>
                 <li>
-                <img src="images/affiliate-1.jpg" class="img-responsive">
+                <img src="<?php echo base_url(); ?>assets/front/images/affiliate-1.jpg" class="img-responsive">
                 <p>$ 41</p>
                 <p>Description of poduct</p>
                 </li>
                 <li>
-                <img src="images/affiliate-1.jpg" class="img-responsive">
+                <img src="<?php echo base_url(); ?>assets/front/images/affiliate-1.jpg" class="img-responsive">
                 <p>$ 41</p>
                 <p>Description of poduct</p>
                 </li>
@@ -825,7 +825,7 @@ btn-raised ripple-effect btn-success btn-block pull-left" >
                           <!-- Collect the nav links, forms, and other content for toggling -->
                           <div class="collapse navbar-collapse" id="Navbar">
                             <!-- regular link -->
-                            <ul class="nav navbar-nav ">
+                            <!-- <ul class="nav navbar-nav ">
                              <li>
                                 <a href="results.php">
                                   Category 1st
@@ -851,7 +851,7 @@ btn-raised ripple-effect btn-success btn-block pull-left" >
                                   Category 5th
                                 </a>
                               </li>
-                              </ul>
+                              </ul> -->
                               <ul class="nav navbar-nav pull-right">
                               <li class="dropdown ">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
